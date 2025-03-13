@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreignId('id')->references('id')->on('users');
             $table->string('userName');
             $table->timestamps();
         });

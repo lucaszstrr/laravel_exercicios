@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post_tag', function (Blueprint $table) {
-            $table->foreign('idTags')->references('idTags')->on('tags');
-            $table->foreign('idPosts')->references('idPosts')->on('posts');
+            $table->id();
+            $table->foreignId('tag_id')->references('id')->on('tags');
+            $table->foreignId('post_id')->references('id')->on('posts');
             $table->timestamps();
         });
     }
