@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->foreignId('id')->references('id')->on('users');
             $table->string('userName');
+            $table->integer('zipcode');
+            $table->string('address');
             $table->timestamps();
         });
     }
